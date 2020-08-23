@@ -14,7 +14,11 @@ output "ip" {
   value = "${aws_instance.ec2_instance.public_ip}"
 }
 
-resource "aws_instance" "ec2_instance" {
- ami = "ami-0cf31d971a3ca20d6"
- instance_type = var.instance_type
+terraform {
+  backend "s3" {
+    bucket = "terraformbackend"
+    key = "terraform"
+    region = "us-east-2"
+    dynamodb_table = "terraform-lock"
+  }
 }
