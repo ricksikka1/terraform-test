@@ -6,8 +6,8 @@ provider "aws" {
 
 resource "aws_dynamodb_table" "terraform_state_lock" {
   name           = "terraform-lock"
-  read_capacity  = 5
-  write_capacity = 5
+  read_capacity  = 4
+  write_capacity = 4
   hash_key       = "LockID"
 
   attribute {
