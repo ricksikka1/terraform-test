@@ -5,6 +5,6 @@ provider "aws" {
   version    = "~> 3.0"
 }
 
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "bucket" {
   bucket = "terraformbackend"
 }
