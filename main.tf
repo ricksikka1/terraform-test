@@ -10,9 +10,9 @@ resource "aws_instance" "ec2_instance" {
   instance_type = "t2.micro"
 }
 
-output "ip" {
-  value = "${aws_instance.ec2_instance.public_ip}"
-}
+# output "ip" {
+#   value = "${aws_instance.ec2_instance.public_ip}"
+# }
 
 terraform {
   backend "s3" {
